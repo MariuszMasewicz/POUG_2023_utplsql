@@ -1,6 +1,6 @@
 set serveroutput on
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_exception_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_exception_tests
 IS
 --%suite(Exception tests)
 --%suitepath(poug.devtests)
@@ -10,7 +10,7 @@ IS
 END poug_ADVANCED_MATH_exception_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_exception_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_exception_tests
 IS
   
   PROCEDURE ut_divide_by_zero
@@ -40,7 +40,7 @@ ORA-06512: at line 6
 --------------------------------------------------------------------------------
 
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_exception_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_exception_tests
 IS
 --%suite(Exception tests)
 --%suitepath(poug.devtests)
@@ -51,7 +51,7 @@ IS
 END poug_ADVANCED_MATH_exception_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_exception_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_exception_tests
 IS
   
   PROCEDURE ut_divide_by_zero
@@ -72,7 +72,7 @@ end poug_ADVANCED_MATH_exception_tests;
 --------------------------------------------------------------------------------
 
 
-create or replace PACKAGE BODY ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -113,7 +113,7 @@ END ADVANCED_MATH;
 --------------------------------------------------------------------------------
 
 
-create or replace PACKAGE BODY ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN

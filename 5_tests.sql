@@ -1,6 +1,6 @@
 set serveroutput on
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_bugfixes_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_bugfixes_tests
 IS
 --%suite(Bugfixes tests)
 --%suitepath(poug.bugfixes)
@@ -11,7 +11,7 @@ IS
 END poug_ADVANCED_MATH_bugfixes_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_bugfixes_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_bugfixes_tests
 IS
   
   PROCEDURE ut_bug_001_better_plus_function
@@ -23,7 +23,7 @@ IS
 end poug_ADVANCED_MATH_bugfixes_tests;
 /
 
-create or replace PACKAGE BODY ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -78,7 +78,7 @@ END ADVANCED_MATH;
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_bugfixes_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_bugfixes_tests
 IS
 --%suite(Exception tests)
 --%suitepath(poug.bugfixes)
@@ -91,7 +91,7 @@ IS
 END poug_ADVANCED_MATH_bugfixes_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_bugfixes_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_bugfixes_tests
 IS
   
   PROCEDURE ut_bug_001_better_plus_function
@@ -112,7 +112,7 @@ end poug_ADVANCED_MATH_bugfixes_tests;
 
 
 
-create or replace PACKAGE BODY ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -172,7 +172,7 @@ END ADVANCED_MATH;
 --------------------------------------------------------------------------------
 
 
-create or replace PACKAGE poug_ADVANCED_MATH_simple_tests
+create or replace PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
 --%suite(Simple tests)
 --%suitepath(poug.devtests)
@@ -227,7 +227,7 @@ IS
 END poug_ADVANCED_MATH_simple_tests;
 /
 
-create or replace PACKAGE poug_ADVANCED_MATH_select_tests
+create or replace PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
 --%suite(Select tests)
 --%suitepath(poug.devtests)

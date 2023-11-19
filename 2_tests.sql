@@ -3,7 +3,7 @@ select  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1) as plus from dual;
 
 set serveroutput on
 
-CREATE OR REPLACE PACKAGE poug_ORDER_OF_EXECUTION_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ORDER_OF_EXECUTION_tests
 IS
 --%suite(Order of execution)
 --%suitepath(poug.devtests)
@@ -34,7 +34,7 @@ procedure before_test2;
 END poug_ORDER_OF_EXECUTION_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ORDER_OF_EXECUTION_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ORDER_OF_EXECUTION_tests
 IS
   procedure before_all_1
   is
@@ -115,7 +115,7 @@ commit;
 
 select * from ADVANCED_MATH_SELECT_TEST_TABLE;
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
 --%suite(Select tests)
 --%suitepath(poug.devtests)
@@ -132,7 +132,7 @@ IS
 END poug_ADVANCED_MATH_select_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
@@ -179,7 +179,7 @@ exec ut.run();
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
 --%suite(Select tests)
 --%suitepath(poug.devtests)
@@ -209,7 +209,7 @@ IS
 END poug_ADVANCED_MATH_select_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
@@ -306,7 +306,7 @@ end poug_ADVANCED_MATH_select_tests;
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
 --%suite(Select tests)
 --%suitepath(poug.devtests)
@@ -340,7 +340,7 @@ IS
 END poug_ADVANCED_MATH_select_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
@@ -465,7 +465,7 @@ ADD (multiply NUMBER )
 ADD (subtract NUMBER );
 
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
 --%suite(Select tests)
 --%suitepath(poug.devtests)
@@ -504,7 +504,7 @@ IS
 END poug_ADVANCED_MATH_select_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
