@@ -1,36 +1,27 @@
-select  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1) as plus from dual;
-
-
 set serveroutput on
 
-CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ORDER_OF_EXECUTION_tests
+CREATE OR REPLACE PACKAGE 
+POUG_2023_TEST.POUG_ORDER_OF_EXECUTION_tests
 IS
 --%suite(Order of execution)
 --%suitepath(poug.devtests)
 
 --%beforeall
   procedure before_all_1;
-
   --%beforeall
   procedure before_all_2;
-
   --%afterall
   procedure after_all;
-
   --%beforeeach
   procedure before_each;
-
 procedure before_test1;
 procedure before_test2;
-
 --%test(test1)  
 --%beforetest(before_test1)
    PROCEDURE test1;
-
 --%test(test2)  
 --%beforetest(before_test2)
    PROCEDURE test2;
-
 END poug_ORDER_OF_EXECUTION_tests;
 /
 
@@ -88,7 +79,7 @@ is
 end poug_ORDER_OF_EXECUTION_tests;
 /
 
-exec ut.run('poug_ORDER_OF_EXECUTION_tests');
+exec ut.run('POUG_ORDER_OF_EXECUTION_tests');
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -100,8 +91,8 @@ exec ut.run('poug_ORDER_OF_EXECUTION_tests');
 
 
 
-DROP TABLE ADVANCED_MATH_SELECT_TEST_TABLE ;
-CREATE TABLE ADVANCED_MATH_SELECT_TEST_TABLE 
+DROP TABLE POUG_2023_TEST.ADVANCED_MATH_SELECT_TEST_TABLE ;
+CREATE TABLE POUG_2023_TEST.ADVANCED_MATH_SELECT_TEST_TABLE 
 (
   NUMBER1 NUMBER NOT NULL 
 , NUMBER2 NUMBER NOT NULL 
@@ -115,24 +106,22 @@ commit;
 
 select * from ADVANCED_MATH_SELECT_TEST_TABLE;
 
-CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE 
+POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
 --%suite(Select tests)
 --%suitepath(poug.devtests)
 --%rollback(manual)
 
    PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
---https://www.utplsql.org/utPLSQL/v3.0.0/userguide/annotations.html
-
 --%test(Plus select)  
 --%beforetest(ut_setup)
    PROCEDURE ut_plus;
 END poug_ADVANCED_MATH_select_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
+CREATE OR REPLACE PACKAGE BODY 
+POUG_2023_TEST.POUG_ADVANCED_MATH_select_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
@@ -142,13 +131,7 @@ IS
       Insert into POUG_2023_TEST.ADVANCED_MATH_SELECT_TEST_TABLE (NUMBER1,NUMBER2) values ('3','3');
       commit;
    END;
-   
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
-  
+ 
   PROCEDURE ut_plus
    IS
     l_actual   sys_refcursor;
@@ -162,7 +145,9 @@ IS
                           --  union all 
                           --select 4,4,8 from dual
                           ;
-      open l_actual   for select number1, number2,  POUG_2023_APP.ADVANCED_MATH.plus(  number1, number2) as result from ADVANCED_MATH_SELECT_TEST_TABLE;
+      open l_actual   for select number1, number2,  
+        POUG_2023_APP.ADVANCED_MATH.plus(  number1, number2) as result 
+        from ADVANCED_MATH_SELECT_TEST_TABLE;
       ut.expect( l_actual ).to_equal( l_expected );
    END;
 end poug_ADVANCED_MATH_select_tests;
@@ -186,8 +171,6 @@ IS
 --%rollback(manual)
 
    PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
 --https://www.utplsql.org/utPLSQL/v3.0.0/userguide/annotations.html
 
 --%test(Plus select)  
@@ -220,12 +203,7 @@ IS
       commit;
    END;
    
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
-  
+ 
   PROCEDURE ut_plus
    IS
     l_actual   sys_refcursor;
@@ -313,7 +291,6 @@ IS
 --%rollback(manual)
 
    PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
 
 --https://www.utplsql.org/utPLSQL/v3.0.0/userguide/annotations.html
 
@@ -350,13 +327,7 @@ IS
       Insert into POUG_2023_TEST.ADVANCED_MATH_SELECT_TEST_TABLE (NUMBER1,NUMBER2) values ('3','3');
       commit;
    END;
-   
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
-  
+
   PROCEDURE ut_plus
    IS
     l_actual   sys_refcursor;
@@ -430,7 +401,9 @@ IS
     l_actual   sys_refcursor;
     l_expected sys_refcursor;
    BEGIN
-      open l_expected for select 1 as number1,1 as number2,2 as plus, 1 as divide, 1 as multiply, 0 as subtract from dual
+      open l_expected for select 1 as number1,1 as number2,
+                          2 as plus, 1 as divide, 
+                          1 as multiply, 0 as subtract from dual
                             union all
                           select 2,2,4,1,4,0 from dual
                             union all 
@@ -438,10 +411,12 @@ IS
                           --  union all 
                           --select 4,4,8 from dual
                           ;
-      open l_actual   for select number1, number2,  POUG_2023_APP.ADVANCED_MATH.plus(  number1, number2) as plus
-                                                 ,  POUG_2023_APP.ADVANCED_MATH.divide(  number1, number2) as divide
-                                                 ,  POUG_2023_APP.ADVANCED_MATH.multiply(  number1, number2) as multiply
-                                                 ,  POUG_2023_APP.ADVANCED_MATH.subtract(  number1, number2) as subtract from ADVANCED_MATH_SELECT_TEST_TABLE;
+      open l_actual   for select number1, number2,  
+        POUG_2023_APP.ADVANCED_MATH.plus(  number1, number2) as plus,  
+        POUG_2023_APP.ADVANCED_MATH.divide(  number1, number2) as divide,  
+        POUG_2023_APP.ADVANCED_MATH.multiply(  number1, number2) as multiply,  
+        POUG_2023_APP.ADVANCED_MATH.subtract(  number1, number2) as subtract 
+        from ADVANCED_MATH_SELECT_TEST_TABLE;
       ut.expect( l_actual ).to_equal( l_expected );
    END;
 
@@ -472,8 +447,6 @@ IS
 --%rollback(manual)
 
    PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
 --https://www.utplsql.org/utPLSQL/v3.0.0/userguide/annotations.html
 
 --%test(Plus select)  
@@ -515,12 +488,7 @@ IS
       commit;
    END;
    
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
-  
+
   PROCEDURE ut_plus
    IS
     l_actual   sys_refcursor;
@@ -614,7 +582,9 @@ IS
     l_actual   sys_refcursor;
     l_expected sys_refcursor;
    BEGIN
-      open l_expected for select 1 as number1,1 as number2,2 as plus, 1 as divide, 1 as multiply, 0 as subtract from dual
+      open l_expected for select 1 as number1,1 as number2,
+                      2 as plus, 1 as divide, 1 as multiply, 
+                      0 as subtract from dual
                             union all
                           select 2,2,4,1,4,0 from dual
                             union all 

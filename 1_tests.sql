@@ -1,16 +1,5 @@
-grant DEBUG CONNECT SESSION, DEBUG ANY PROCEDURE to POUG_2023_UT3, POUG_2023_TEST;
 
--- code coverage
-grant create any procedure, execute any procedure to POUG_2023_TEST;
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-create or replace PACKAGE POUG_2023_TEST.POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS 
+create or replace PACKAGE POUG_2023_APP.ADVANCED_MATH AS 
   function plus(p_number1 number,  p_number2 number) return number;
   function subtract(p_number1 number,  p_number2 number) return number;
   function multiply(p_number1 number,  p_number2 number) return number;
@@ -18,7 +7,7 @@ create or replace PACKAGE POUG_2023_TEST.POUG_2023_TEST.POUG_2023_APP.ADVANCED_M
 END ADVANCED_MATH;
 /
 
-create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -71,9 +60,6 @@ IS
 --%suite(Simple tests)
 -- %suitepath(poug.devtests)
 
-   PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
 --%test(Plus 1 1)   
    PROCEDURE ut_plus_1_1;
 END poug_ADVANCED_MATH_simple_tests;
@@ -81,23 +67,13 @@ END poug_ADVANCED_MATH_simple_tests;
 
 CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
-   PROCEDURE ut_setup IS
-   BEGIN
-      NULL;
-   END;
-   
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
-  
+ 
   PROCEDURE ut_plus_1_1
    IS
    BEGIN
       --https://www.utplsql.org/utPLSQL/latest/userguide/expectations.html#matchers
       ut.expect(  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1), 'it is not so easy to add 1 to 1' ).to_equal(2);
-      --ut.expect(  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1), 'null values are bad' ).to_be_not_null();
+      ut.expect(  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1), 'null values are bad' ).to_be_not_null();
       --ut.expect(  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1), 'not null values are bad' ).to_be_null();
    END;
 end poug_ADVANCED_MATH_simple_tests;
@@ -115,9 +91,6 @@ IS
 --%suite(Simple tests)
 -- %suitepath(poug.devtests)
 
-   PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
 --%test(Plus 1 1)   
    PROCEDURE ut_plus_1_1;
 --%test(Divide 1 1)   
@@ -131,16 +104,6 @@ END poug_ADVANCED_MATH_simple_tests;
 
 CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
-   PROCEDURE ut_setup IS
-   BEGIN
-      NULL;
-   END;
-   
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
   
   PROCEDURE ut_plus_1_1
    IS
@@ -184,9 +147,6 @@ IS
 --%suite(Simple tests)
 -- %suitepath(poug.devtests)
 
-   PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
 --%test(Plus 1 1)   
    PROCEDURE ut_plus_1_1;
 --%test(Plus 2 2)   
@@ -220,16 +180,6 @@ END poug_ADVANCED_MATH_simple_tests;
 
 CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
-   PROCEDURE ut_setup IS
-   BEGIN
-      NULL;
-   END;
-   
-   PROCEDURE ut_teardown
-   IS
-   BEGIN
-      NULL;
-   END;
   
   PROCEDURE ut_plus_1_1
    IS

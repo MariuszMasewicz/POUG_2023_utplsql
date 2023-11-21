@@ -177,9 +177,6 @@ IS
 --%suite(Simple tests)
 --%suitepath(poug.devtests)
 
-   PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
-
 --%context(plus tests)
 
 --%test(Plus 1 1)   
@@ -234,7 +231,6 @@ IS
 --%rollback(manual)
 
    PROCEDURE ut_setup;
-   PROCEDURE ut_teardown;
 
 --https://www.utplsql.org/utPLSQL/v3.0.0/userguide/annotations.html
 

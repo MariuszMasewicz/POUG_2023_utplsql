@@ -1,17 +1,19 @@
 --https://www.utplsql.org/utPLSQL/latest/userguide/coverage.html
 set serveroutput on
-spool c:\Users\Mariusz.Masewicz\Desktop\utplsql-reports\poug_coverage.html
-exec ut.run('POUG_2023_TEST', ut_coverage_html_reporter(),              a_include_objects=>ut_varchar2_list('POUG_2023_APP.ADVANCED_MATH'),             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
+spool c:\utplsql-reports\poug_coverage.html
+exec ut.run('POUG_2023_TEST', ut_coverage_html_reporter(),
+   a_include_objects=>ut_varchar2_list('POUG_2023_APP.ADVANCED_MATH'),
+   a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
 spool off
 
-CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ERRORS AS 
+CREATE OR REPLACE PACKAGE POUG_2023_APP.POUG_ERRORS AS 
   procedure log_error; 
   procedure write_error;
   procedure write_error_to_table;
 END POUG_ERRORS;
 /
 
-CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ERRORS AS 
+CREATE OR REPLACE PACKAGE BODY POUG_2023_APP.POUG_ERRORS AS 
   procedure log_error is
   BEGIN
     write_error();
@@ -27,7 +29,7 @@ CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ERRORS AS
 END POUG_ERRORS;
 /
 
-create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -72,21 +74,21 @@ create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 END ADVANCED_MATH;
 /
 
-spool c:\Users\Mariusz.Masewicz\Desktop\utplsql-reports\poug_coverage.html
+spool c:\utplsql-reports\poug_coverage_2.html
 exec ut.run('POUG_2023_TEST', ut_coverage_html_reporter(),              a_include_objects=>ut_varchar2_list('POUG_2023_APP.ADVANCED_MATH','POUG_2023_APP.POUG_ERRORS'),             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
 spool off
 
 --https://www.utplsql.org/utPLSQL/latest/userguide/coverage.html#coverage-reporting-options
 
-spool c:\Users\Mariusz.Masewicz\Desktop\utplsql-reports\poug_coverage.html
-exec ut.run('POUG_2023_TEST', ut_coverage_html_reporter(),              a_include_schema_expr=>'POUG_2023_APP',             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
+spool c:\utplsql-reports\poug_coverage.html
+ut.run('POUG_2023_TEST', ut_coverage_html_reporter(),              a_include_schema_expr=>'POUG_2023_APP',             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
 spool off
 
 
-exec ut.run(ut_coverage_html_reporter ());
-exec ut.run(ut_coveralls_reporter ());
-exec ut.run(ut_coverage_sonar_reporter ());
-exec ut.run(ut_coverage_cobertura_reporter ());
+exec ut.run(ut_coverage_html_reporter () ,             a_include_schema_expr=>'POUG_2023_APP',             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
+exec ut.run(ut_coveralls_reporter (),             a_include_schema_expr=>'POUG_2023_APP',             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
+exec ut.run(ut_coverage_sonar_reporter (),             a_include_schema_expr=>'POUG_2023_APP',             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
+exec ut.run(ut_coverage_cobertura_reporter (),             a_include_schema_expr=>'POUG_2023_APP',             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
 
 exec ut.run(ut_documentation_reporter());
 exec ut.run(ut_documentation_reporter(), a_color_console=>true);

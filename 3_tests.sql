@@ -23,6 +23,7 @@ IS
 end poug_ADVANCED_MATH_exception_tests;
 /
 
+exec ut.run('poug_ADVANCED_MATH_exception_tests');
 
 
 ORA-01476: divisor is equal to zero
@@ -64,6 +65,10 @@ IS
 end poug_ADVANCED_MATH_exception_tests;
 /
 
+
+exec ut.run('poug_ADVANCED_MATH_exception_tests');
+
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -72,7 +77,7 @@ end poug_ADVANCED_MATH_exception_tests;
 --------------------------------------------------------------------------------
 
 
-create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -105,6 +110,9 @@ create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 END ADVANCED_MATH;
 /
 
+exec ut.run('poug_ADVANCED_MATH_exception_tests');
+
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -113,7 +121,7 @@ END ADVANCED_MATH;
 --------------------------------------------------------------------------------
 
 
-create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -157,3 +165,4 @@ create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 END ADVANCED_MATH;
 /
 
+exec ut.run('poug_ADVANCED_MATH_exception_tests');

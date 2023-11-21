@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<testsuites tests="23" disabled="4" errors="0" failures="0" name="" time=".273489" >
+<testsuite tests="23" id="1" package="poug"  disabled="4" errors="0" failures="0" name="poug" time=".272592" >
+<testsuite tests="21" id="2" package="poug.devtests"  disabled="4" errors="0" failures="0" name="devtests" time=".266175" >
+<testsuite tests="12" id="3" package="poug.devtests.poug_advanced_math_simple_tests"  disabled="1" errors="0" failures="0" name="Simple tests" time=".024107" >
+<testsuite tests="3" id="4" package="poug.devtests.poug_advanced_math_simple_tests.nested_context_#1"  disabled="1" errors="0" failures="0" name="plus tests" time=".00523" >
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#1" assertions="0" name="Plus 1 1" time="0"  status="Disabled">
+<skipped>
+<![CDATA[Bugfix#002]]>
+</skipped>
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#1" assertions="1" name="Plus 2 2" time=".002176" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#1" assertions="1" name="Plus 3 3" time=".001763" >
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+<testsuite tests="3" id="5" package="poug.devtests.poug_advanced_math_simple_tests.nested_context_#2"  disabled="0" errors="0" failures="0" name="divide tests" time=".00568" >
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#2" assertions="1" name="Divide 1 1" time=".001461" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#2" assertions="1" name="Divide 2 2" time=".001558" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#2" assertions="1" name="Divide 3 3" time=".001602" >
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+<testsuite tests="3" id="6" package="poug.devtests.poug_advanced_math_simple_tests.nested_context_#3"  disabled="0" errors="0" failures="0" name="multiply tests" time=".005818" >
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#3" assertions="1" name="Multiply 1 1" time=".00163" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#3" assertions="1" name="Multiply 2 2" time=".0015" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#3" assertions="1" name="Multiply 3 3" time=".001658" >
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+<testsuite tests="3" id="7" package="poug.devtests.poug_advanced_math_simple_tests.nested_context_#4"  disabled="0" errors="0" failures="0" name="subtract tests" time=".005789" >
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#4" assertions="1" name="Subtract 1 1" time=".001512" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#4" assertions="1" name="Subtract 2 2" time=".001553" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_simple_tests.nested_context_#4" assertions="1" name="Subtract 3 3" time=".001679" >
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+<system-out/>
+<system-err/>
+</testsuite>
+<testsuite tests="6" id="8" package="poug.devtests.poug_advanced_math_select_tests"  disabled="3" errors="0" failures="0" name="Select tests" time=".227847" >
+<testcase classname="poug.devtests.poug_advanced_math_select_tests" assertions="0" name="Plus select" time="0"  status="Disabled">
+<skipped>
+<![CDATA[Bugfix#002]]>
+</skipped>
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_select_tests" assertions="1" name="Divide select" time=".084942" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_select_tests" assertions="1" name="Multiply select" time=".077709" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_select_tests" assertions="1" name="Subtract select" time=".06356" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_select_tests" assertions="0" name="All operations select" time="0"  status="Disabled">
+<skipped>
+<![CDATA[Bugfix#002]]>
+</skipped>
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_advanced_math_select_tests" assertions="0" name="All operations update" time="0"  status="Disabled">
+<skipped>
+<![CDATA[Bugfix#002]]>
+</skipped>
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+<testsuite tests="1" id="9" package="poug.devtests.poug_advanced_math_exception_tests"  disabled="0" errors="0" failures="0" name="Exception tests" time=".002816" >
+<testcase classname="poug.devtests.poug_advanced_math_exception_tests" assertions="0" name="Divide by zero" time=".001954" >
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+<testsuite tests="2" id="10" package="poug.devtests.poug_order_of_execution_tests"  disabled="0" errors="0" failures="0" name="Order of execution" time=".009435" >
+<testcase classname="poug.devtests.poug_order_of_execution_tests" assertions="0" name="test1" time=".00318" >
+<system-out>
+<![CDATA[before_each
+before_test1
+test1
+]]>
+</system-out>
+<system-err/>
+</testcase>
+<testcase classname="poug.devtests.poug_order_of_execution_tests" assertions="0" name="test2" time=".002974" >
+<system-out>
+<![CDATA[before_each
+before_test2
+test2
+]]>
+</system-out>
+<system-err/>
+</testcase>
+<system-out>
+<![CDATA[before_all_1
+before_all_2
+after_all
+]]>
+</system-out>
+<system-err/>
+</testsuite>
+</testsuite>
+<testsuite tests="2" id="11" package="poug.bugfixes"  disabled="0" errors="0" failures="0" name="bugfixes" time=".004927" >
+<testsuite tests="2" id="12" package="poug.bugfixes.poug_advanced_math_bugfixes_tests"  disabled="0" errors="0" failures="0" name="poug_advanced_math_bugfixes_tests" time=".004621" >
+<testcase classname="poug.bugfixes.poug_advanced_math_bugfixes_tests" assertions="1" name="bug#001 2+1 shoul be 4" time=".001862" >
+<system-out/>
+<system-err/>
+</testcase>
+<testcase classname="poug.bugfixes.poug_advanced_math_bugfixes_tests" assertions="1" name="bug#002 1+1 shoul be 3" time=".001849" >
+<system-out/>
+<system-err/>
+</testcase>
+<system-out/>
+<system-err/>
+</testsuite>
+</testsuite>
+</testsuite>
+</testsuites>
+
