@@ -4,14 +4,14 @@ spool c:\Users\Mariusz.Masewicz\Desktop\utplsql-reports\poug_coverage.html
 exec ut.run('POUG_2023_TEST', ut_coverage_html_reporter(),              a_include_objects=>ut_varchar2_list('POUG_2023_APP.ADVANCED_MATH'),             a_coverage_schemes=>ut_varchar2_list('POUG_2023_APP'));
 spool off
 
-CREATE OR REPLACE PACKAGE POUG_ERRORS AS 
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ERRORS AS 
   procedure log_error; 
   procedure write_error;
   procedure write_error_to_table;
 END POUG_ERRORS;
 /
 
-CREATE OR REPLACE PACKAGE BODY POUG_ERRORS AS 
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ERRORS AS 
   procedure log_error is
   BEGIN
     write_error();
@@ -27,7 +27,7 @@ CREATE OR REPLACE PACKAGE BODY POUG_ERRORS AS
 END POUG_ERRORS;
 /
 
-create or replace PACKAGE BODY ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN

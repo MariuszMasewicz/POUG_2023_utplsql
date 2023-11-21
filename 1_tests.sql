@@ -10,7 +10,7 @@ grant create any procedure, execute any procedure to POUG_2023_TEST;
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-create or replace PACKAGE ADVANCED_MATH AS 
+create or replace PACKAGE POUG_2023_TEST.POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS 
   function plus(p_number1 number,  p_number2 number) return number;
   function subtract(p_number1 number,  p_number2 number) return number;
   function multiply(p_number1 number,  p_number2 number) return number;
@@ -18,7 +18,7 @@ create or replace PACKAGE ADVANCED_MATH AS
 END ADVANCED_MATH;
 /
 
-create or replace PACKAGE BODY ADVANCED_MATH AS
+create or replace PACKAGE BODY POUG_2023_TEST.POUG_2023_APP.ADVANCED_MATH AS
 
   function plus(p_number1 number,  p_number2 number) return number AS
   BEGIN
@@ -66,7 +66,7 @@ ut.expect(  POUG_2023_APP.ADVANCED_MATH.plus( 1,  1) ).to_equal(3);
 end;
 /
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_simple_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
 --%suite(Simple tests)
 -- %suitepath(poug.devtests)
@@ -79,7 +79,7 @@ IS
 END poug_ADVANCED_MATH_simple_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_simple_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
@@ -110,7 +110,7 @@ exec ut.run('poug_ADVANCED_MATH_simple_tests');
 exec ut.run();
 
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_simple_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
 --%suite(Simple tests)
 -- %suitepath(poug.devtests)
@@ -129,7 +129,7 @@ IS
 END poug_ADVANCED_MATH_simple_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_simple_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
@@ -179,7 +179,7 @@ end poug_ADVANCED_MATH_simple_tests;
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-CREATE OR REPLACE PACKAGE poug_ADVANCED_MATH_simple_tests
+CREATE OR REPLACE PACKAGE POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
 --%suite(Simple tests)
 -- %suitepath(poug.devtests)
@@ -218,7 +218,7 @@ IS
 END poug_ADVANCED_MATH_simple_tests;
 /
 
-CREATE OR REPLACE PACKAGE BODY poug_ADVANCED_MATH_simple_tests
+CREATE OR REPLACE PACKAGE BODY POUG_2023_TEST.POUG_ADVANCED_MATH_simple_tests
 IS
    PROCEDURE ut_setup IS
    BEGIN
